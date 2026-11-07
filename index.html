@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Google Clone</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-size: 65px;
+        }
+
+        input {
+            width: 350px;
+            padding: 12px;
+            border-radius: 25px;
+            border: 1px solid gray;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                margin: 100px 15px 0;
+            }
+
+            input {
+                width: 90%;
+                box-sizing: border-box;
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        <span style="color: blue;">G</span><span style="color: red;">o</span><span style="color: orange;">o</span><span style="color: blue;">g</span><span style="color: green;">l</span><span style="color: red;">e</span>
+    </h1>
+
+    <form onsubmit="searchGoogle(event)">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Google"
+        >
+
+        <button type="submit">Google Search</button>
+    </form>
+
+    <script>
+        function searchGoogle(event) {
+
+            event.preventDefault();
+
+            let query = document.getElementById("searchInput").value;
+
+            if (query.trim() !== "") {
+
+                window.location.href =
+                "https://www.google.com/search?q=" +
+                encodeURIComponent(query);
+
+            }
+        }
+    </script>
+
+</body>
+</html>
